@@ -8,6 +8,8 @@ description: >
   (4) bulk-updating or moving issues, (5) listing queues, boards, sprints, or versions,
   (6) tracking work time via worklogs, (7) managing issue links and checklists.
   Triggers on: Yandex Tracker, трекер, задачи трекера, тикеты, очереди трекера.
+metadata:
+  { "openclaw": { "requires": { "env": ["YANDEX_TRACKER_TOKEN"] }, "primaryEnv": "YANDEX_TRACKER_TOKEN" } }
 ---
 
 # Yandex Tracker
@@ -34,8 +36,10 @@ Required env vars (choose one auth method):
 
 All commands output JSON by default. Use `--format text` for plain text.
 
+Use the `run.sh` wrapper (auto-loads credentials):
+
 ```bash
-python3 scripts/tracker.py <command> <action> [args]
+scripts/run.sh <command> <action> [args]
 ```
 
 ## Commands Reference
